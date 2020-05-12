@@ -1,2 +1,2 @@
 console.log("This is test from jenkins...");
-console.log("Sample push to...");
+console.log("Sample push dir to...");
