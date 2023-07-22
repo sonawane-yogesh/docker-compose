@@ -1,11 +1,12 @@
 import Mongoose from 'mongoose';
-let auth: { username: string, password: string } = { username: "yogeshs", password: "yogeshs" };
+import envConfig from "../configs/configurations";
+let auth: { username: string, password: string } = { username: envConfig.mongoDbUsername, password: envConfig.mongoDbPassword };
 let config: any = {
     auth: auth,
     userName: auth.username,
     password: auth.password,
     databaseName: "docker-test",
-    mongoDbUrl: `mongodb://${auth.username}:${auth.password}@127.0.0.1:27017/`,
+    mongoDbUrl: `mongodb://${auth.username}:${auth.password}@${envConfig.mongoDbHost}:${envConfig.mongoDbPort}/`,
 };
 const mongoDbOpt: Mongoose.ConnectOptions = {
     dbName: config.databaseName,
