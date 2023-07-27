@@ -36,6 +36,7 @@ app.listen(port, function () {
     var address: any = this.address();
     console.log(JSON.stringify(address));
     console.log(`Server application is up and running on port: ${port}`);
+    console.log("This line added later when application already started!")
 });
 
 export default app;
