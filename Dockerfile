@@ -11,5 +11,8 @@ WORKDIR /home/app/node-docker
 COPY . .
 RUN npm install
 RUN npm run build-ts
+# RUN apk update && apk add bash
 EXPOSE 3000
-CMD [ "npm", "start"]
+EXPOSE 9222
+# CMD ["/bin/bash","-c","./startup.sh"]
+CMD [ "npm", "run", "dev"]

@@ -19,8 +19,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - ./:/home/app/src
-      - /home/app/src/node_modules
+    x-develop: 
+      watch:
+        - path: ./src
+          target: /home/app/node-docker/src
+          action: sync
+          ignore:
+            - node_modules/
+        - path: ./package.json    
+          action: rebuild
     ports:
       - 3000:3000
+      - 9222:9229
+    # command: ["node", "--inspect=0.0.0.0:9229", "dist/server-app.js"]
