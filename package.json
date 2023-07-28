@@ -1,5 +1,5 @@
 {
-  "name": "jenkins-typescript",
+  "name": "docker-compose",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "scripts": {
     "build-ts": "tsc",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "start": "tsc-watch --onSuccess \"npm run watch-node\"",
+    "start": "npm run serve",
     "serve": "node dist/server-app.js",
     "test": "cross-env NODE_ENV=unitTest nyc --reporter=lcov --reporter=text mocha --require ts-node/register --timeout 99999 --recursive 'tests/**/*.spec.ts' --exit",
     "coverage": "nyc report --reporter=lcov",
