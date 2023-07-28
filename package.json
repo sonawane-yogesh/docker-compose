@@ -58,9 +58,5 @@
     "nyc": "^15.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
-  },
-  "devDependencies": {
-    "@types/tsc-watch": "^4.2.0",
-    "tsc-watch": "^6.0.4"
   }
 }
